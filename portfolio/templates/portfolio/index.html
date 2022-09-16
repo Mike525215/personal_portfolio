@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="content">
-        <img src="{% static 'portfolio/blog.jpeg' %}" alt="">
+        <img src="{% static 'portfolio/personal_photo2.jpg' %}" alt="">
         <div class="personal_info">
             <span>Mike Popov is student on second year of study in KPI. He very interesting in learning something new technologies and
                 very like meeting new people
@@ -10,25 +10,23 @@
         </div>
     </div>
     <div class="portfolio">
-        <hr>
         <h3>Portfolio</h3>
+        <hr>
         <br>
-        <div class="container">
-            <div class="row">
-                {% for project in projects %}
-                    <div class="col-lg-4 col-md-4 col-xs-12">
-                        <div class="card" style="width: 22rem;">
-                            <a href="{{ project.url }}">
-                                <img src="{{ project.image.url }}" class="card-img-top" style="width: 22rem; height: 223.183px;">
-                            </a>
-                          <div class="card-body">
-                              <h5 class="card-title">{{ project.title }}</h5>
-                              <p class="card-text">{{ project.description }}</p>
-                          </div>
+        <ul>
+            {% for project in projects %}
+                <li>
+                    <div class="card" style="width: 22rem;">
+                        <a href="{{ project.url }}">
+                            <img src="{{ project.image.url }}" class="card-img-top" style="width: 22rem; height: 223.183px;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description }}</p>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}
